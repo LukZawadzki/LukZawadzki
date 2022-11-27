@@ -22,7 +22,7 @@
             <!--search-->
             <div class="search_chat">
                 <div>
-                    <input type="text" placeholder="Search or start new chat">
+                    <input type="text" placeholder="Search or start new chat" required="required">
                     <ion-icon name="search-outline"></ion-icon>
                 </div>
             </div>
@@ -34,13 +34,12 @@
                     </div>
                     <div class="details">
                         <div class="listHead">
-                           <h4>ThisPerson Doesn'tExist 1</h4>
-                           <p class="time">15:10</p> 
+                           <h4>Server 1 active</h4>
+                           <!-- <p class="time">15:10</p>  -->
                         </div>
-                        <div class="message_p">
+                        <!-- <div class="message_p">
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -50,12 +49,12 @@
                     </div>
                     <div class="details">
                         <div class="listHead">
-                           <h4>Myself</h4>
-                           <p class="time">11:31</p> 
+                           <h4>Server 2 not active</h4>
+                           <!-- <p class="time">11:31</p>  -->
                         </div>
-                        <div class="message_p">
+                        <!-- <div class="message_p">
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -65,13 +64,13 @@
                     </div>
                     <div class="details">
                         <div class="listHead">
-                           <h4>Myself unread</h4>
-                           <p class="time">7:23</p> 
+                           <h4>Server 3 unread (longer text than container for testing)</h4>
+                           <!-- <p class="time">7:23</p>  -->
                         </div>
-                        <div class="message_p">
+                        <!-- <div class="message_p">
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                             <b>1</b>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 
@@ -84,9 +83,9 @@
                     <div class="userimg">
                         <img src="img1.jpg" class="cover">
                     </div>
-                    <h4>ThisPerson Doesn'tExist 1<br><span>online</span></h4>
+                    <h4>Server 1<br><span><!--online--></span></h4>
                 </div>
-                <ul class="nav_icons">
+                <ul class="nav_icons"> <!--Placeholders!-->
                     <li><ion-icon name="scan-circle-outline"></ion-icon></li>
                     <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
                 </ul>
@@ -177,8 +176,8 @@
             <div class="chatbox_input">
                 <ion-icon name="happy-outline"></ion-icon>
                 <ion-icon name="attach-outline"></ion-icon>
-                <input type="text" placeholder="Type a message">
-                <ion-icon name="mic"></ion-icon>
+                <input type="text" placeholder="Type a message" required="required">
+                <ion-icon name="return-down-forward-outline"></ion-icon>
             </div>
         </div>
 
@@ -189,10 +188,10 @@
             </div>
             <!--channel list-->
             <div class="channellist">
-                <div class="channel">
+                <div class="channel_unread">
                     <p>General</p>
                 </div>
-                <div class="channel">
+                <div class="channel_active">
                     <p>Memes</p>
                 </div>
                 <div class="channel">
@@ -211,13 +210,35 @@
                         </div>
                     </div>
                 </div>
-                
+                <div class="block">
+                    <div class="imgbx">
+                        <img src="img1.jpg" class="cover">
+                    </div>
+                    <div class="details">
+                        <div class="listHead">
+                           <p>Short</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="imgbx">
+                        <img src="img1.jpg" class="cover">
+                    </div>
+                    <div class="details">
+                        <div class="listHead">
+                           <p>Veryvery longtext totest spacing and wrapping of said text</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+<!--Version below doesn't show text on hover, above does-->
+<script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

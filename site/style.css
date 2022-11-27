@@ -13,15 +13,17 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 97vh;
-    background: linear-gradient(#009688 0%, #009688 40px, #d9dbd5 40px, #d9dbd5 100%);
+    /* min-height: 97vh; */
+    overflow: hidden;
+    /* background: linear-gradient(#009688 0%, #009688 40px, #d9dbd5 40px, #d9dbd5 100%); */
 }
 
 .container{
     position: relative;
-    width: 1395px;
-    max-width: 95%;
-    height: calc(96vh - 40px);
+    /* width: 1395px; */
+    width: 100%;
+    height: 100vh;
+    /* height: 99%; */
     background: #fff;
     box-shadow:  0 2px 2px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.06);
     display: flex;
@@ -30,13 +32,15 @@ body
 .container .leftSide{
     position: relative;
     flex: 20%;
+    max-width: 300px;
     /* background: #fff; */
     background: rgba(21, 19, 19, 0.88);
     border-right: 1px solid #000;
 }
 .container .centerBox{
     position: relative;
-    flex: 60%;
+    max-width: calc(100%-600px);
+    /* flex: 60%; */
     /* background: #e5ddd5; */
     background: rgb(0, 0, 0);
 }
@@ -44,7 +48,7 @@ body
 .container .rightSide{
     position: relative;
     flex: 20%;
-    max-width: 15%;
+    max-width: 300px;
     background: rgba(21, 19, 19, 0.88);
     border-left: 1px solid #000;
 }
@@ -115,6 +119,7 @@ body
     justify-content: center;
     align-items: center;
     padding: 0 15px;
+    margin-bottom: 5px;
 }
 
 .search_chat div{
@@ -131,6 +136,14 @@ body
     height: 38px;
     border-radius: 14px;
     padding-left: 40px;
+    transition: 0.2s;
+}
+
+/* .search_chat div input:valid, */
+.search_chat div input:focus{
+    outline-style: solid;
+    /* outline-width: 0.2px; */
+    outline-color: #06d755;
 }
 
 .search_chat div ion-icon{
@@ -143,29 +156,37 @@ body
 
 .chatlist{
     position: relative;
-    height: calc(100% - 110px);
+    height: calc(100%-110px);
     /* 110px = 50px search_chat + 60px header  */
-    overflow-y: auto;
-    /* background: rgb(176, 176, 176);
-    opacity: 0.56; */
+    /* overflow-y: auto; */
+    /* overflow-x: hidden; */
+    /* background: rgb(176, 176, 176); */
+    /* opacity: 0.56; */
 }
 
 .chatlist .block {
     position: relative;
-    width: 100%;
+    width: 90%;
+    left: 5%;
+    border-radius: 10px;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     padding: 0.5em 0.5em;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.56);
-    background: rgba(0, 0, 0, 0.15);
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.56); */
+    margin-bottom: 5px;
+    background: rgba(0, 0, 0, 0.39);
     cursor: pointer;
 }
 
 .chatlist .block.active{
-    background: #454545;
-
+    /* background: #454545; */
+    background: rgba(0, 0, 0, 0.9);
+    outline-style: solid;
+    outline-color: #06d755;
+    outline-width: 2px;
 }
+
 
 .chatlist .block:hover{
     background: #545454;
@@ -174,6 +195,8 @@ body
 .chatlist .block .imgbx{
     position: relative;
     min-width: 45px;
+    max-width: 90%;
+    /* left: 5%; */
     height: 45px;
     overflow: hidden;
     border-radius: 50%;
@@ -183,7 +206,9 @@ body
 
 .chatlist .block .details{
     position: relative;
-    width: 100%;
+    width: 90%;
+    /* left: 5%; */
+    right:5px;
 }
 
 .chatlist .block .details .listHead{
@@ -198,6 +223,11 @@ body
     color: rgba(255, 255, 255, 0.777);
     padding-left: 0.2em;
     margin-right: 0.5em;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .chatlist .block .details .listHead .time{
@@ -211,6 +241,11 @@ body
 
 .chatlist .block.unread .details .listHead .time{
     color: #06d755;
+}
+
+.chatlist .block.active .details .listHead h4{
+    font-weight: 1000;
+    color: white;
 }
 
 .chatlist .block.unread .details .listHead h4{
@@ -293,7 +328,8 @@ body
     padding: 12px;
     margin-top: 2.5px;
     margin-bottom: 2.5px;
-    background: #dcf8c6;
+    /* background: #dcf8c6; */
+    background: #06d755;
     border-radius: 12px;
     font-size: 0.9em;
     overflow-wrap: break-word;
@@ -411,9 +447,16 @@ body
     border-radius: 30px;
     font-size: 1em;
     background: rgba(80, 79, 79, 0.394);
+    transition: 0.2s;
 }
 
-input::placeholder{
+/* .chatbox_input input:valid, */
+.chatbox_input input:focus{
+    outline-style: solid;
+    outline-color: #06d755;
+}
+
+.chatbox_input input::placeholder{
     color: rgba(197, 194, 194, 0.429);
 }
 
@@ -462,6 +505,7 @@ input{
 
 .channellist .channel:hover{
     background: rgba(0, 0, 0, 0.801);
+    /* background: #06d7565d; */
 }
 
 .channellist .channel p{
@@ -469,7 +513,60 @@ input{
 }
 
 .channellist .channel p:hover{
-    color: rgba(255, 255, 255, 0.91);
+    /* color: rgba(255, 255, 255, 0.91); */
+    color: #06d755;
+}
+
+.channellist .channel_unread{
+    position: relative;
+    width: 75%;
+    left: 12.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 0.5em;
+    margin: 12px 0;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #06d755;
+    cursor: pointer;
+}
+
+.channellist .channel_unread p{
+    color: #06d755;
+}
+
+.channellist .channel_unread:hover{
+    background: rgba(0, 0, 0, 0.801);
+    /* background: #06d7565d; */
+}
+
+.channellist .channel_active{
+    position: relative;
+    width: 75%;
+    left: 12.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 0.5em;
+    margin: 12px 0;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    cursor: pointer;
+    outline-style: solid;
+    outline-color: #06d755;
+    outline-width: 2px;
+}
+
+.channellist .channel_active p{
+    color: white;
+    font-weight: 600;
+}
+
+.channellist .channel_active:hover{
+    background: rgba(0, 0, 0, 0.801);
+    /* background: #06d7565d; */
 }
 
 .peoplelist {
@@ -482,14 +579,16 @@ input{
 
 .peoplelist .block {
     position: relative;
-    width: 75%;
-    left: 12.5%;
+    max-width: 85%;
+    left: 7.5%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     padding: 0.5em 0.5em;
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: rgba(0, 0, 0, 0.39);
     cursor: pointer;
 }
 
@@ -506,6 +605,7 @@ input{
 .peoplelist .block .details{
     position: relative;
     /* overflow-wrap: break-word; */
+    /* background: red; */
     max-width: 100%;
 }
 
